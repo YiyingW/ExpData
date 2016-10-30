@@ -38,10 +38,10 @@ rhg_cols <- c( "#F27314", "#F8A31B",
 ggplot(data = data) +
   geom_point(mapping=aes(x=time, y=mass, color=sample), size=3) +
   scale_color_manual(values=rhg_cols) +
-  annotate("text", x=25, y=2, label="Aggregates", size=5, fontface='bold',color="#F27314") +
-  annotate("text", x=120, y=3, label="Monomer", size=5, fontface='bold',color="#E2C59F") +
-  annotate("text", x=180, y=3.5, label="Compound", size=5, fontface='bold',color="#F8A31B") +
-  annotate("text", x=220, y=3.8, label="Monomer", size=5, fontface='bold',color="#E2C59F") +
+  annotate("text", x=25, y=2, label="Aggregates", size=10, fontface='bold',color="#F27314") +
+  annotate("text", x=120, y=2.5, label="Monomer", size=10, fontface='bold',color="#E2C59F") +
+  annotate("text", x=180, y=3, label="Compound", size=10, fontface='bold',color="#F8A31B") +
+  annotate("text", x=220, y=3.5, label="Monomer", size=10, fontface='bold',color="#E2C59F") +
   labs(x='Time (min)', y=bquote('Mass ('*mu~ 'g/' ~ cm^-2*')'))+
   theme(axis.text=element_text(face = 'bold',size=15), axis.title=element_text(face = 'bold',size=15),
         legend.title=element_blank(),

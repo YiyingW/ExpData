@@ -17,7 +17,7 @@ myPalette <- c(col_CONT, col_RES, col_PIC, col_OXR, col_PID, col_negative)
 ggplot(data=data) +
   geom_point(mapping=aes(x=time, y=r, color=Sample)) +
   scale_color_manual(values=myPalette) +
-  geom_smooth(mapping=aes(x=time, y=r, color=Sample),method=lm, alpha=0.5) +
+  geom_smooth(mapping=aes(x=time, y=r, color=Sample),method=lm, alpha=0.5, se=FALSE) +
 
   labs(x='Time (min)', y= expression(paste(Delta,italic('R'['H']), "(nm)"))) +
   theme(axis.text=element_text(face = 'bold',size=15), axis.title=element_text(face = 'bold',size=15),
