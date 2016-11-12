@@ -1,4 +1,5 @@
 library(tidyverse)
+library(plotrix)
 
 # A representative aggregation curve for paper1
 one_agg <- read.csv("aggregation_curve.csv", as.is=FALSE)
@@ -10,7 +11,7 @@ ggplot(data=one_agg_tidy) +
   geom_point(mapping = aes(x=Time, y=y, color=Sample), size=4) +
   geom_line(mapping = aes(x=Time, y=y, color=Sample), size=1.5) +
   geom_hline(yintercept = 1, linetype=2) +
-  labs(x='Time (min)', y='Fraction of Control Plateau') +
+  labs(x='Time (min)', y='LOC Intensity\n(Fraction of Control Plateau)') +
   theme(axis.text=element_text(face = 'bold',size=20), axis.title=element_text(face = 'bold',size=20),
         legend.title=element_blank(), legend.text=element_text(size=15), legend.position=c(0.92,0.85)) 
 
@@ -37,7 +38,7 @@ ggplot(data=agg_plateau_to_plot) +
   geom_bar(mapping=aes(x=Sample, y=avg, fill=Sample), stat='identity',position='dodge') +
   scale_fill_manual(values=myPalette) + 
   geom_errorbar(aes(x=Sample,y=avg,ymax=avg+sem,ymin=avg-sem), size=0.8, width=0.2) +
-  labs(x=NULL, y='Plateau\n(Fraction of Control)') +
+  labs(x=NULL, y='Relative Plateau') +
   theme(axis.text=element_text(face = 'bold',size=20), axis.title=element_text(face = 'bold',size=20),
         legend.position='none', 
         axis.title.y=element_text(margin=margin(0,20,0,0))) +
@@ -73,7 +74,7 @@ ggplot(data=agg_lag_to_plot) +
   geom_bar(mapping=aes(x=Sample, y=avg, fill=Sample), stat='identity',position='dodge') +
   scale_fill_manual(values=myPalette) + 
   geom_errorbar(aes(x=Sample,y=avg,ymax=avg+sem,ymin=avg-sem), size=0.8, width=0.2) +
-  labs(x=NULL, y='Lag\n(Fraction of Control)') +
+  labs(x=NULL, y='Relative Lag') +
   theme(axis.text=element_text(face = 'bold',size=20), axis.title=element_text(face = 'bold',size=20),
         legend.position='none', 
         axis.title.y=element_text(margin=margin(0,20,0,0))) +

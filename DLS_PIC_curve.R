@@ -17,7 +17,7 @@ ggplot(data=to_plot) +
   geom_line(mapping=aes(x=Time, y=avg, col=factor(Sample)), size=1.5) +
   geom_errorbar(aes(x=Time,y=avg,ymax=avg+sem,ymin=avg-sem,
                     col=factor(Sample)), size=1, width=0.5, alpha=0.3) + 
-  labs(x='Time (min)', y='Intensity\nFraction of Control Plateau') +
+  labs(x='Time (min)', y='Intensity\n(Fraction of Control Plateau)') +
   theme(axis.text=element_text(face = 'bold',size=15), axis.title=element_text(face = 'bold',size=15),
         legend.title=element_blank(), legend.text=element_text(size=12),
         axis.title.y=element_text(margin=margin(0,20,0,0))) 
@@ -50,7 +50,7 @@ plateau_to_plot <-
 ggplot(data=plateau_to_plot) +
   geom_bar(mapping=aes(x=Sample, y=avg, fill=Sample), stat='identity',position='dodge') +
   scale_fill_manual(values=myPalette) + 
-  geom_errorbar(aes(x=Sample,y=avg,ymax=avg+sem,ymin=avg-sem), size=1, width=0.5) +
+  geom_errorbar(aes(x=Sample,y=avg,ymax=avg+sem,ymin=avg-sem), size=0.8, width=0.2) +
   labs(x=NULL, y='Plateau Intensity\n(Fraction of Control Plateau)') +
   theme(axis.text=element_text(face = 'bold',size=20), axis.title=element_text(face = 'bold',size=20),
         legend.position='none', 

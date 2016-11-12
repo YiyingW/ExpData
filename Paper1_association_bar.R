@@ -39,7 +39,7 @@ ggplot(data_summary) +
   #scale_alpha_discrete(range=c(0.95, 0.65)) + 
   geom_errorbar(mapping=aes(x=Sample, y=avg,ymax=avg+sem,ymin=avg-sem), size=0.8, width=0.2, position=position_dodge(.9))+
   scale_fill_manual(values=myPalette) + 
-  labs(x=NULL, y='Association Rate\n(Fraction of Control)') +
+  labs(x=NULL, y='Relative Association Rate') +
   theme(axis.text=element_text(face = 'bold',size=20), axis.title=element_text(face = 'bold',size=20),
         legend.position='none', 
         strip.text.x = element_text(size = 20, face='bold'),
